@@ -1,0 +1,14 @@
+vpc_name           = "dashboard-counting-vpc"
+vpc_cidr           = "10.0.0.0/24"
+azs                = ["ap-northeast-1a"]
+private_subnets    = ["10.0.0.128/25"]
+public_subnets     = ["10.0.0.0/25"]
+public_cidr_blocks = "0.0.0.0/0"
+dash_instance      = "dashboard-instance"
+count_instance     = "counting-instance"
+dashboard_sg_name  = "dashboard-sg"
+counting_sg_name   = "counting-sg"
+instance_type      = "t2.micro"
+dash_priv_ip       = "10.0.0.100"
+count_priv_ip      = "10.0.0.200"
+ami_id             = "ami-0f8faa29480e7e6de"

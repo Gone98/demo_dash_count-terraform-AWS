@@ -1,65 +1,69 @@
+variable "vpc_name" {
+  description = "The name of the VPC to be created."
+  type        = string
+}
+
 variable "vpc_cidr" {
-  description = "CIDR block for the VPC"
+  description = "The CIDR block for the VPC."
   type        = string
-  default     = "10.100.0.0/24"
 }
 
-variable "dashboard_subnet_cidr" {
-  description = "CIDR block for the dashboard (public) subnet"
-  type        = string
-  default     = "10.100.0.0/25"
+variable "azs" {
+  description = "A list of availability zones to be used for the subnets."
+  type        = list(string)
 }
 
-variable "counting_subnet_cidr" {
-  description = "CIDR block for the counting (private) subnet"
-  type        = string
-  default     = "10.100.0.128/25"
+variable "private_subnets" {
+  description = "A list of CIDR blocks for the private subnets."
+  type        = list(string)
+}
+
+variable "public_subnets" {
+  description = "A list of CIDR blocks for the public subnets."
+  type        = list(string)
 }
 
 variable "dashboard_sg_name" {
-  description = "Name for the dashboard security group"
+  description = "The name of the security group for the dashboard."
   type        = string
-  default     = "dashboard-sg"
 }
 
 variable "counting_sg_name" {
-  description = "Name for the counting security group"
+  description = "The name of the security group for counting."
   type        = string
-  default     = "counting-sg"
 }
 
-variable "http_port" {
-  description = "HTTP port for ingress rules"
-  type        = number
-  default     = 80
-}
-
-variable "ssh_port" {
-  description = "SSH port for ingress rules"
-  type        = number
-  default     = 22
-}
-
-variable "any_cidr" {
-  description = "CIDR blocks representing all traffic, used for public ingress and egress rules"
+variable "public_cidr_blocks" {
+  description = "A list of CIDR blocks allowed to access the dashboard on port 80."
   type        = string
-  default     = "0.0.0.0/0"
+}
+
+variable "dash_instance" {
+  description = "The name of the EC2 instance for the dashboard."
+  type        = string
+}
+
+variable "count_instance" {
+  description = "The name of the EC2 instance for counting."
+  type        = string
 }
 
 variable "instance_type" {
-  description = "EC2 instance type for both dashboard and counting instances"
+  description = "The instance type for the EC2 instances."
   type        = string
-  default     = "t2.micro"
 }
 
-variable "dashboard_private_ip" {
-  description = "Private IP address for the dashboard instance"
+variable "dash_priv_ip" {
+  description = "The private IP address for the dashboard EC2 instance."
   type        = string
-  default     = "10.100.0.100"
 }
 
-variable "counting_private_ip" {
-  description = "Private IP address for the counting instance"
+variable "count_priv_ip" {
+  description = "The private IP address for the counting EC2 instance."
   type        = string
-  default     = "10.100.0.200"
+}
+
+variable "ami_id" {
+  description = "The AMI ID for the EC2 instances."
+  type        = string
 }

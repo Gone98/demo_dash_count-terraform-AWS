@@ -16,7 +16,7 @@ After=syslog.target network.target
     
 [Service]
 Environment=PORT="80"
-Environment=COUNTING_SERVICE_URL="http://10.100.0.200:80"
+Environment=COUNTING_SERVICE_URL="http://10.0.0.200:80"
 ExecStart=/usr/bin/dashboard-service
 User=root
 Group=root
