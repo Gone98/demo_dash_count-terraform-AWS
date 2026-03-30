@@ -131,7 +131,6 @@ terraform apply
 ## Prerequisites
 
 - Terraform >= 1.0
-- AWS CLI configured with a profile named `aws_htoo`
 - Sufficient IAM permissions to create VPC, EC2, EIP, NAT Gateway, and key pair resources
 
 ## Output
