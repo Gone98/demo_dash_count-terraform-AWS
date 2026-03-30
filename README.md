@@ -37,7 +37,6 @@ Builds all infrastructure using **native AWS Terraform resources** — no commun
 
 ```
 dashboard-accounting-AWS/
-├── versions.tf          # Provider config (hashicorp/aws 6.37.0, region ap-northeast-1)
 ├── vpc.tf               # VPC, subnets, IGW, NAT GW, route tables, security groups
 ├── instance.tf          # EC2 instances, TLS key, key pair
 ├── variables.tf         # Input variables with defaults
@@ -84,7 +83,6 @@ Same architecture as V1 but uses **official public Terraform modules** from the 
 
 ```
 dashboard-accounting-AWS-V2/
-├── versions.tf          # Provider config (hashicorp/aws 6.37.0, region ap-northeast-1)
 ├── terraform.tf         # Module definitions + TLS key + key pair resource
 ├── terraform.tfvars     # Variable values
 ├── variables.tf         # Input variable declarations
