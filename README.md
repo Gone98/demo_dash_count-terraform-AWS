@@ -1,6 +1,5 @@
 # Dashboard & Counting Service — AWS Terraform Deployments
 
-This repository contains two versions of the same infrastructure: a **Dashboard** service and a **Counting** service deployed on AWS Cloud.
 ---
 
 ## Architecture Overview
